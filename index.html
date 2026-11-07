@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Liviana's Bluetooth Speaker</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main>
+    <p class="eyebrow">A ROUGH INTERACTIVE MODEL</p>
+    <h1>My Bluetooth speaker</h1>
+    <p>Power on. Hold Bluetooth for one second. Connect from the phone. Press play.</p>
+
+    <div class="devices">
+      <section aria-label="Speaker" class="speaker-area">
+        <div id="speaker" class="speaker">
+          <div id="notes" class="notes" aria-hidden="true"><span>♪</span><span>♫</span><span>♪</span></div>
+          <div class="buttons">
+            <!-- Keep each indicator beside the control it belongs to. -->
+            <div class="control-pair">
+              <div class="power-control">
+                <i id="green" class="light" aria-label="Power light"></i>
+                <button id="power" type="button" aria-label="Power" title="Power">
+                  <svg class="control-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v10 M6 5a9 9 0 1 0 12 0"/></svg>
+                </button>
+                <span class="charge-indicator"><i id="orange" class="light"></i>CHARGE</span>
+              </div>
+              <div class="bluetooth-control">
+                <i id="blue" class="light" aria-label="Bluetooth light"></i>
+                <button id="bluetooth" type="button" aria-label="Bluetooth" title="Bluetooth — hold to pair" aria-describedby="hold-help">
+                  <svg class="control-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v20l7-6-14-8 M5 16 19 8 12 2"/></svg>
+                </button>
+              </div>
+            </div>
+            <button id="play" type="button" aria-label="Play / Pause" title="Play / Pause">
+              <svg class="control-icon" viewBox="0 0 32 24" aria-hidden="true"><path d="m3 4 11 8-11 8Z"/><path d="M21 4v16 M28 4v16"/></svg>
+            </button>
+            <button id="plus" type="button" aria-label="Increase volume">+</button>
+            <button id="minus" type="button" aria-label="Decrease volume">−</button>
+          </div>
+          <!-- A small ink-style flower echoes the reference illustration. -->
+          <div class="grille" aria-hidden="true">
+            <svg class="speaker-doodle" viewBox="0 0 110 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M55 110 Q60 85 53 64 M56 95 Q29 96 26 78 Q49 75 56 95 M57 85 Q79 64 90 74 Q85 94 57 91" fill="#fffefb" stroke="#181818" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M39 22 C32 0 58 0 63 19 C82 1 99 24 82 38 C107 45 95 70 75 63 C74 87 46 86 43 65 C20 80 5 56 26 44 C4 29 23 10 39 22Z" fill="#fffefb" stroke="#181818" stroke-width="4" stroke-linejoin="round"/>
+              <path d="M46 40 Q43 32 48 32 Q53 33 50 41 M63 40 Q61 32 66 33 Q70 35 67 41" fill="#181818"/>
+              <path d="M45 50 Q56 62 69 49" stroke="#181818" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
+        <p id="hold-help" class="hint">Hold Bluetooth with your mouse, finger, or Space / Enter key.</p>
+      </section>
+
+      <section class="phone" aria-label="Phone Bluetooth screen">
+        <div class="phone-notch"></div>
+        <p class="eyebrow">MY PHONE</p>
+        <h2>Bluetooth</h2>
+        <p class="phone-enabled">Bluetooth is on <span>●</span></p>
+        <p class="device-label">AVAILABLE DEVICES</p>
+        <p id="empty-list">No speaker found. Start pairing to discover it.</p>
+        <button id="device" type="button" hidden>Liviana's Bluetooth Speaker <small>Tap to connect</small></button>
+        <p id="phone-status" role="status"></p>
+      </section>
+    </div>
+
+    <section class="lab" aria-label="Simulation controls">
+      <div>
+        <h2>Battery &amp; Charging</h2>
+        <label class="cable"><input id="plug" type="checkbox"> Plug in cable</label>
+        <p>Battery <output id="battery-value">60%</output></p>
+        <div id="battery-grid" class="battery-grid" role="meter" aria-label="Battery level" aria-valuemin="0" aria-valuemax="100" aria-valuenow="60"></div>
+      </div>
+      <div hidden>
+        <h2>Inside the JavaScript</h2>
+        <pre id="state"></pre>
+      </div>
+    </section>
+    <p id="message" class="message" role="status">Ready when you are. Press Power to begin.</p>
+    <p class="hint">Original JavaScript melody · no audio files or Bluetooth hardware needed.</p>
+  </main>
+</body>
+</html>

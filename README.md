@@ -4,7 +4,9 @@ A rough interactive model of my Bluetooth speaker, built with plain HTML, CSS, a
 
 ## Open the model
 
-Download the files and open `index.html` in a browser. Keep all three files in the same folder. No installation or build step is needed.
+[Try the interactive speaker model](https://livianaji12321.github.io/Modeling-a-Bluetooth-Speaker/) — no download needed.
+
+To run it locally: Download the files and open `index.html` in a browser. Keep all three files in the same folder. No installation or build step is needed.
 
 ## Files
 
